@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Repository = "https://github.com/qwwesq/PyBahn"
+
+[project]
+name = "PyBahn"
+version = "0.1.17"
+description = "A Python library for interacting with Deutsche Bahn data."
+authors = [{name="qwwesq"}]
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "httpx",
+    "reportlab>=4.0.0",
+    "pydantic"
+]
