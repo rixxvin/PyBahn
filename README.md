@@ -64,30 +64,13 @@ for station in stations:
 ### 🚉 Departures
 
 ```python
-departures = bahn.departures("8000105")  # Berlin Hbf
-
-print(departures[0].lineName)
-```
-
-#### or
-
-```python
-station = bahn.station("Munich")
-
-departures = bahn.departures(station)
+munich = bahn.station("Munich")
+departures = bahn.departures(munich)  # Berlin Hbf
 
 print(departures[0].lineName)
 ```
 
 ### 🚉 Arrivals
-
-```python
-arrivals = bahn.arrivals("8000105")  # Berlin Hbf
-
-print(arrivals[0].lineName)
-```
-
-#### or
 
 ```python
 station = bahn.station("Munich")
@@ -154,9 +137,11 @@ from pybahn.structs import Products
 station1 = bahn.station("Frankfurt")
 station2 = bahn.station("Berlin")
 
-journeys = bahn.journeys(departure=station2, 
-                           destination=station1, 
-                           products=[Products.EC_IC, Products.REGIONAL])
+journeys = bahn.journeys(
+				departure=station2,
+				destination=station1,
+				products=[Products.EC_IC, Products.REGIONAL]
+)
 
 print(journeys[0].changes_amont)
 ```
