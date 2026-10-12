@@ -42,7 +42,7 @@ bahn = PyBahn()
 stations = bahn.stations("Berlin")
 
 for station in stations:
-	print(station.name)
+    print(station.name)
 ```
 
 ### 📍 Get a Single Station
@@ -65,7 +65,7 @@ for station in stations:
 
 ```python
 munich = bahn.station("Munich")
-departures = bahn.departures(munich)  # Berlin Hbf
+departures = bahn.departures(munich)
 
 print(departures[0].lineName)
 ```
@@ -138,9 +138,9 @@ station1 = bahn.station("Frankfurt")
 station2 = bahn.station("Berlin")
 
 journeys = bahn.journeys(
-				departure=station2,
-				destination=station1,
-				products=[Products.EC_IC, Products.REGIONAL]
+    departure=station2,
+    destination=station1,
+    products=[Products.EC_IC, Products.REGIONAL]
 )
 
 print(journeys[0].changes_amont)
@@ -157,7 +157,11 @@ station2 = bahn.station("Berlin")
 stopover = bahn.station("frankfurt")
 stopover.stopover_time = 5
 
-journeys = bahn.journeys(departure=station1, destination=station2, stopovers=[stopo])
+journeys = bahn.journeys(
+    departure=station1,
+    destination=station2,
+    stopovers=[stopo]
+)
 
 
 print(journeys)
